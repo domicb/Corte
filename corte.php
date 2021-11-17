@@ -12,23 +12,23 @@
 header('Content-Type: text/html; charset=utf-8');
 //insert CDN BOOSTRAP
 echo '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">';
-echo '<center>
-  <div class="alert alert-success" role="alert"> FUERZA JAVIER  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
-  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-  <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
-</svg></div></center>';
 $date = date('Y-m-d');
 echo '
-<div>
+<div><center>
     <form action="/corte-web/" method="post">
-        <select multiple class="form-control" id="exampleFormControlSelect2" name="status">
-        <option name="status" value="wc-processing">Productos vendidos</option>
-        <option name="status" value="wc-redsys-residentp">Con Etiqueta MRW</option>
-        <option name="status" value="wc-on-hold">En espera</option>
-        </select>
-        <button type="submit" class="btn btn-outline-primary btn-lg btn-block">FILTRAR</button>
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+            <button type="submit" name="status" value="wc-processing" class="btn btn-info">Productos vendidos</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="submit" name="status" value="wc-redsys-residentp" class="btn btn-success">Con Etiqueta MRW</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="submit" name="status" value="wc-on-hold" class="btn btn-warning">En espera</button>
+        </div>
+        </div>
     </form>
-</div>';
+</center></div>';
 
 //PARSE POST STATUS
 $findfill = $_POST['status'];
